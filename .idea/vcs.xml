@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/cldr-emoji-annotation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/comtypes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/configobj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/espeak" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/ia2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/liblouis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/minhook" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/pyserial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/scons" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/sonic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/wxPython" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/miscDeps" vcs="Git" />
+  </component>
+</project>
