@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script>
+   
+		//file name
       var imsrc = "";
       function imgPreview(event) {
          imsrc = document.getElementById("img").value;
@@ -11,22 +14,36 @@
       }
       var record = [];
       var obj = {};
+	  
+	  var m = ""
+	  
       function showInput() {
          if(document.getElementById("input").value != "") {
             var input = document.getElementById("input").value;
             record.push(input);
+			m = input;
             document.getElementById("showInput").innerHTML = record.join(", ");
-            var test = record;
-            obj[imsrc] = test;
+            //obj[imsrc] = record;
             console.log(obj);
-            // var new = JSON.stringify(obj);
-            // console.log(new)
+			
+			var data = {image:imsrc, message:m};
+				 $.ajax({
+				   url: 'http://127.0.0.1:5000/',
+				   type: 'POST',
+				   contentType:'application/json',
+				   data: JSON.stringify(data),
+				   dataType:'json'
+				 })
+			
+			
          }
       }
       function deleteInput() {
          record.length = 0;
          document.getElementById("showInput").innerHTML = record;
       }
+	  
+;
    </script>
 
 <center>
