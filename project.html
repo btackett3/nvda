@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+   <script>
+      var imsrc = "";
+      function imgPreview(event) {
+         imsrc = document.getElementById("img").value;
+         document.getElementById("preview").src = URL.createObjectURL(event.target.files[0]);
+         document.getElementById("preview").width = "300";
+         document.getElementById("preview").height = "300";
+         console.log(imsrc);
+      }
+      var record = [];
+      var obj = {};
+      function showInput() {
+         if(document.getElementById("input").value != "") {
+            var input = document.getElementById("input").value;
+            record.push(input);
+            document.getElementById("showInput").innerHTML = record.join(", ");
+            var test = record;
+            obj[imsrc] = test;
+            console.log(obj);
+            // var new = JSON.stringify(obj);
+            // console.log(new)
+         }
+      }
+      function deleteInput() {
+         record.length = 0;
+         document.getElementById("showInput").innerHTML = record;
+      }
+   </script>
+
+<center>
+   <h1>Demo</h1>
+   <body bgcolor=#85adad>
+   <img id="preview" src="https://png.pngtree.com/element_origin_min_pic/29/03/20/1656fa8074e9571.jpg" height ="300" width ="300">
+   <p>
+      <form action="">
+         <div>Choose Image
+            <input type="file" id="img" naccept="image/*" name="input" onchange="imgPreview(event)">
+            <p></p>
+         <div>Insert Text
+            <input type="text" id="input" name="input">
+            <p></p>
+         </div>
+         <button type="button" onclick="showInput()">Submit</button>
+         <button type="button" onclick="deleteInput()">Delete</button>
+         <p id="showInput"></p>
+      </form>
+   </p>
+</center>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+   <script>
+      var imsrc = "";
+      function imgPreview(num) {
+         if(num == 1) {
+            imsrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQArwyrotMyhHuQ7JJif9C_bZCRKNWgGHcpQYn45jPdBHzCCBjd"
+         }
+         else if(num == 2) {
+            imsrc = "https://cdn.newsapi.com.au/image/v1/9fdbf585d17c95f7a31ccacdb6466af9"
+         }
+         else {
+            imsrc = "https://png.pngtree.com/element_origin_min_pic/29/03/20/1656fa8074e9571.jpg"
+         }
+         document.getElementById("preview").src = imsrc
+         document.getElementById("preview").width = "300";
+         document.getElementById("preview").height = "300";
+      }
+      var record = [];
+      var obj = {};
+      function showInput() {
+         if(document.getElementById("input").value != "") {
+            var input = document.getElementById("input").value;
+            record.push(input);
+            obj[imsrc] = record;
+            console.log(obj);
+            document.getElementById("showInput").innerHTML = record.join(", ");
+         }
+      }
+      function deleteInput() {
+         record.length = 0;
+         document.getElementById("showInput").innerHTML = record;
+      }
+
+   </script>
+
+<center>
+   <h1>Demo</h1>
+   <body bgcolor=#85adad>
+   <img id="preview" src="https://png.pngtree.com/element_origin_min_pic/29/03/20/1656fa8074e9571.jpg" height ="300" width ="300">
+   <p>
+      <form action="">
+         <div>Choose Image
+            <select name="images" values="images" onchange="deleteInput()" oninput="imgPreview(value)">
+               <option value="" selected disabled hidden>choose</option>
+               <option value="1">Image1</option>
+               <option value="2">Image2</option>
+               <option value="3">Image3</option>
+               <option value="4">Image4</option>
+            </select>
+            <p></p>
+         <div>Insert Text
+            <input type="text" id="input" name="input">
+            <p></p>
+         </div>
+         <button type="button" onclick="showInput()">Submit</button>
+         <button type="button" onclick="deleteInput()">Delete</button>
+         <p id="showInput"></p>
+      </form>
+   </p>
+</center>
+
+</body>
+</html> -->
